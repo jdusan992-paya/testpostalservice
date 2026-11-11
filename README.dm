@@ -1,0 +1,1 @@
+This project is created to simplify testing mail functionalities during application development
