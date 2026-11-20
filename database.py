@@ -1,7 +1,9 @@
+from pathlib import Path
 import sqlite3
 
 def get_connection(db_name):
         try:
+                Path(db_name).touch(exist_ok=True)
                 return sqlite3.connect(db_name)
         except Exception as e:
                 print(f"Error: {e}")
@@ -39,7 +41,7 @@ def create_table_sender(connection):
 
 
 def main():
-        connection = get_connection("testpostalservice.db")
+        connection = get_connection("testpostalservice.db")            # Parameterize
         try:
                 create_table_sender(connection)
                 create_table_recipient(connection)

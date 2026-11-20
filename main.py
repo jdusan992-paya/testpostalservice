@@ -34,7 +34,7 @@ async def main():
 
     # 4. Create the TCP server using our partial class as the protocol factory
     # This listens on localhost, port 8025
-    server = await loop.create_server(smtp_factory, host='127.0.0.1', port=8025)
+    server = await loop.create_server(smtp_factory, host='127.0.0.1', port=8025)        #Parametrize 
     print("SMTP Server running on 127.0.0.1:8025")
 
     # 5. Add POSIX signal handlers for graceful exit (Control-C / SIGTERM)
